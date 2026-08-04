@@ -1,0 +1,37 @@
+#Introduction to Databases (Using the HR Database)
+
+#What is a Database?
+
+A database is an organized collection of related data that is stored electronically. It allows users to store, retrieve, update, and delete information efficiently.
+
+In your HR Database, information about employees, attendance, payroll, and leave requests is stored in separate tables. Together, these tables form a single database called the HR Database.
+
+#Example
+
+Your HR database contains tables such as:
+
+employees – Stores employee details.
+attendance – Stores employee attendance records.
+payroll – Stores salary information.
+leave_requests – Stores employee leave applications.
+
+Instead of keeping this information in multiple Excel files, everything is organized inside one database.
+
+#Why Do We Need a Database?
+
+Imagine a company with 5,000 employees.
+
+#Without a database:
+
+Employee details are stored in Excel.
+Attendance is stored in another file.
+Payroll is stored in another file.
+Leave requests are stored separately.
+
+Finding one employee's complete information becomes difficult.
+
+#With the HR Database:
+
+Employee information is connected using Employee IDs.
+Attendance, payroll, and leave records can be accessed instantly.
+Reports can be generated using SQL queries.
