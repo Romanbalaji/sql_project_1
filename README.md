@@ -206,7 +206,9 @@ Retrieve employees in the IT department.
 SELECT *
 FROM employees
 WHERE department = 'IT';
+
 <img width="853" height="411" alt="image" src="https://github.com/user-attachments/assets/f1ce256b-2264-4aff-a436-d5cbfd4ba577" />
+
 
 4.ORDER BY
 
@@ -283,3 +285,118 @@ If needed:
 ROLLBACK TO salary_update;
 
 Only changes made after the savepoint are undone.
+
+# Retrieving Data in SQL
+ Retrieving data means fetching information from one or more tables in a database. The main SQL command used for retrieving data is SELECT.
+1.SELECT
+
+The SELECT statement retrieves data from a table.
+
+Syntax
+SELECT column_name
+FROM table_name;
+Example 1: Display All Columns
+SELECT *
+FROM employees;
+<img width="988" height="389" alt="image" src="https://github.com/user-attachments/assets/176fa2a2-d65e-4a72-b35c-14f8dfa98c32" />
+
+Example 2: Display Specific Columns
+SELECT first_name, department, salary
+FROM employees;
+<img width="774" height="394" alt="image" src="https://github.com/user-attachments/assets/4567f8e7-b5b3-4c7d-a418-f9334caf556c" />
+
+2.DISTINCT
+
+DISTINCT removes duplicate values.
+
+Syntax
+SELECT DISTINCT column_name
+FROM table_name;
+Example 1: List All Departments
+SELECT DISTINCT department
+FROM employees;
+<img width="631" height="286" alt="image" src="https://github.com/user-attachments/assets/fe04f9d0-a5fa-4c96-a7bd-d9a1f9cbb1d7" />
+
+3.WHERE
+
+The WHERE clause filters rows based on a condition.
+
+Syntax
+SELECT column_name
+FROM table_name
+WHERE condition;
+Example 1: Employees in IT Department
+SELECT *
+FROM employees
+WHERE department = 'IT';
+<img width="846" height="416" alt="image" src="https://github.com/user-attachments/assets/f2901894-8b07-4d4e-bb27-add7c315b8f9" />
+Example 2: Employees with Salary Greater Than ₹50,000
+SELECT first_name, salary
+FROM employees
+WHERE salary > 50000;
+<img width="772" height="408" alt="image" src="https://github.com/user-attachments/assets/ae0cc300-08d8-4a1b-814e-acd259f6f5c1" />
+
+4.ORDER BY
+
+ORDER BY sorts the result in ascending (ASC) or descending (DESC) order.
+
+Syntax
+SELECT column_name
+FROM table_name
+ORDER BY column_name ASC;
+
+or
+
+SELECT column_name
+FROM table_name
+ORDER BY column_name DESC;
+Example 1: Salary in Ascending Order
+SELECT first_name, salary
+FROM employees
+ORDER BY salary ASC;
+<img width="779" height="423" alt="image" src="https://github.com/user-attachments/assets/d2fccb3f-11a8-4e7e-b290-0e57ad8ca601" />
+
+5.LIMIT
+
+LIMIT restricts the number of rows returned.
+
+Note: LIMIT is supported in MySQL and PostgreSQL. In SQL Server, use TOP.
+
+Syntax
+SELECT *
+FROM employees
+LIMIT 3;
+Example 1: First 3 Employees
+SELECT *
+FROM employees
+LIMIT 3;
+<img width="953" height="295" alt="image" src="https://github.com/user-attachments/assets/6a7e8fee-ecce-4c61-9649-8caebcc48d0b" />
+Example 2: Top 2 Highest Paid Employees
+SELECT first_name, salary
+FROM employees
+ORDER BY salary DESC
+LIMIT 2;
+<img width="889" height="266" alt="image" src="https://github.com/user-attachments/assets/7deea494-e58e-44a9-9465-41bc17815e90" />
+
+6.Aliases (AS)
+
+An alias gives a temporary name to a column or table, making the output easier to read.
+Column Alias
+Syntax
+SELECT column_name AS alias_name
+FROM table_name;
+Example 1
+SELECT first_name AS Employee_Name,
+       salary AS Monthly_Salary
+FROM employees;
+<img width="502" height="407" alt="image" src="https://github.com/user-attachments/assets/026b6d19-efdb-42c9-b26a-092306bd206e" />
+
+Table Alias
+SELECT e.first_name,
+       e.salary
+FROM employees AS e;
+<img width="688" height="414" alt="image" src="https://github.com/user-attachments/assets/81b88cb2-bebd-4b86-bda8-ac8d1270d2b9" />
+
+
+
+
